@@ -1,0 +1,28 @@
+.result-list{
+    position: absolute;
+    max-height: 280px;
+    padding:  10px 0 10px 10px;
+    top: 45px;
+    left: 0;
+    right: 0;
+    background: rgb(8, 8, 8);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar{
+        width: 15px;
+        padding: 1px;
+        background-color:#000;
+
+        &-thumb{
+            border: 4px solid #000{
+                radius: 7px;
+            }
+            background: #fff;
+        }
+    }
+
+    h5{
+        text-align: center;
+        margin: 20px 0;
+    }
+}

@@ -1,0 +1,35 @@
+.result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 30px;
+    margin-top: 10px;
+    background: #111111;
+    transition: .1s all;
+    cursor: pointer;
+
+    &:nth-child(1){
+        margin-top: 0;
+    }
+
+    &:hover{
+        background: #141414;
+    }
+
+    &-name{
+        font-size: 19px;
+    }
+
+    &-params{
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        span{
+            font-size: 13px;
+            margin-left: 15px;
+            color: #636363;
+        }
+    }
+}

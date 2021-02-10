@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { App } from './app';
+import { ErrorBoundary } from './components';
+import { Context, SWProvider } from './components/context';
+import './index.scss';
+import actions from './redux/actions';
+import { SwState } from './redux/reducer';
+import './services/sw-transform';
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <ErrorBoundary>
+        <SwState>
+            <App/>
+        </SwState>
+    </ErrorBoundary>,
+    document.getElementById('root'));

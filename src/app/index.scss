@@ -1,0 +1,16 @@
+.app{
+    width: 100%;
+    // min-height: 400px;
+    transition: .3s all;
+
+    .bg-title{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 450px;
+        font-weight: 700;
+        color: rgb(37, 37, 37);
+        z-index: -1;
+    }
+}
