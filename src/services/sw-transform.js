@@ -72,7 +72,7 @@ export class SWTransform extends SWApi{
             passengers: el.passengers,
             class: el.starship_class,
             films: this._renderFilms(el),
-            img: this.planetImageUrl(id)
+            img: this.starshipImageUrl(id)
         }
     }
 
