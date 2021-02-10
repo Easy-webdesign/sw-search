@@ -11,19 +11,18 @@ const Actions = (state, dis) => {
         }
         apiDetails = (id) => {
             const cand = state.items.find(el => el.id === id);
-            console.log(cand);
             dis({type: 'RENDER_DETAILS', payload: cand})
         }
         apiSearch = (value) => {
             if(!state.items.length) return;
-
-            const reg = new RegExp(`${value}`, 'gi')
+            if(value.length >= 3){
+                const reg = new RegExp(`${value}`, 'gi')
+                const payload = state.items.filter(el => {
+                    return (value ? el.name.match(reg) : '')
+                })
+                dis({type: 'RENDER_SEARCH_LIST', payload: payload.length ? payload : ''})
+            }
             
-            const payload = state.items.filter(el => {
-                return (value ? el.name.match(reg) : '')
-            })
-            
-            dis({type: 'RENDER_SEARCH_LIST', payload: payload.length ? payload : ''})
         }
         apiLoading = () => {}
         apiError = () => {}

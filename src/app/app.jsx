@@ -7,7 +7,6 @@ import './index.scss';
 class App extends Component {
     componentDidMount = () => {
         this.props.apiItems();
-        // this.props.apiSearch('Lu');
     }
     render(){
         if(this.props.loading) return <Spinner/>
